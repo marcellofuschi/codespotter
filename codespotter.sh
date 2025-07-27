@@ -5,8 +5,6 @@ if [ -z "$BASH_VERSION" ]; then
   exit 1
 fi
 
-set -euo pipefail
-
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Error: not inside a git repository." >&2
   exit 1
