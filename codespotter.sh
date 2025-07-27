@@ -36,10 +36,10 @@ while read -r status path; do
 done < <(git diff-tree --no-commit-id --name-status -r HEAD)
 
 # Send payload to backend
-resp=$(printf '%s' "$payload" | curl -sS --fail \
-  -H "Content-Type: application/json" \
-  --data-binary @- "$SERVICE_URL" \
-  || { echo "Failed to get review."; exit 1; })
+if ! resp=$(printf '%s' "$payload" | curl -sS --fail -H "Content-Type: application/json" --data-binary @- "$SERVICE_URL"); then
+  echo "Failed."
+  exit 1
+fi
 
 if [[ "$resp" == "NOTHING_TO_REPORT" ]]; then
   echo "Nothing to report."
