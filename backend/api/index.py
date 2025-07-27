@@ -19,7 +19,7 @@ SYSTEM_PROMPT = (
     "\n<script>document.addEventListener('DOMContentLoaded', () => { hljs.highlightAll(); });</script>"
     "\n\nMake sure to specify the right class when you output code, e.g. <pre><code class=\"language-html\">...</code></pre> for HTML, etc."
     "\nAlso, when your response actually is HTML code (and not the NOTHING_TO_REPORT special code), add this styling to the generated HTML page:"
-    '\n<style>body{max-width:750px;margin:1em auto;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.5;color:#333;background:#fafafa}h1,h2,h3,h4{margin:1.5em 0 0.5em;border-bottom:1px solid #ddd;padding-bottom:.3em}a{color:#0366d6;text-decoration:none}a:hover{text-decoration:underline}table{border-collapse:collapse;margin:1em 0}th,td{border:1px solid #ddd;padding:.4em .8em}th{background:#eee}</style>'
+    '\n<style>body{max-width:850px;margin:1em auto;font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.5;color:#333;background:#fafafa}h1,h2,h3,h4{margin:1.5em 0 0.5em;border-bottom:1px solid #ddd;padding-bottom:.3em}a{color:#0366d6;text-decoration:none}a:hover{text-decoration:underline}table{border-collapse:collapse;margin:1em 0}th,td{border:1px solid #ddd;padding:.4em .8em}th{background:#eee}</style>'
 )
 
 @app.route("/analyze", methods=["POST"])
